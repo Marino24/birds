@@ -1,0 +1,21 @@
+<h1>Registriraj se</h1>
+
+<%=form_with model: @uporabnik, url: registracija_path do |form|%>
+
+    <div class ="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field (:email), class: "form-control" %>
+    </div>
+    <div class ="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field (:password), class: "form-control"%>
+    </div>
+    <div class ="mb-3">
+        <%= form.label :password_confirmation %>
+        <%= form.password_field (:password_confirmation), class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Registriraj se"%>
+    </div>
+<%end%>
