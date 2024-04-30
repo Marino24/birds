@@ -3,8 +3,18 @@ Rails.application.routes.draw do
   root to: "main#index"
 
   get "galerija", to: "galerija#galerijaIndex"
+
   get "registracija", to: "registracija#new"
   post "registracija", to: "registracija#create"
+
+  get "prijava", to: "session#new"
+  post "prijava", to: "session#create"
+
+  delete "odjava", to: "session#destroy"
+
+  get "nalozi", to: "galerija#new"
+  post "nalozi", to: "galerija#create"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

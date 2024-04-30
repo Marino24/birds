@@ -1,1 +1,11 @@
-<h1> OK</h1>
+<h1>Galerija slik</h1>
+
+<% @slike.each do |slika| %>
+  <div>
+    <%= image_tag slika.image , width: "300", height: "200" %>
+    <p>Naziv: <%= slika.name %></p> 
+    <p>Naložil: <%= slika.user.email %></p> 
+    <br>
+  </div>
+<% end %>
+

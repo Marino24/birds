@@ -1,7 +1,6 @@
-<h1>Registriraj se</h1>
+<h1> Prijavi se </h1>
 
-<%=form_with model: @user, url: registracija_path do |form|%>
-
+<%= form_with url: nalozi_path do |form| %>
     <div class ="mb-3">
         <%= form.label :email %>
         <%= form.text_field (:email), class: "form-control" %>
@@ -10,12 +9,8 @@
         <%= form.label :password %>
         <%= form.password_field (:password), class: "form-control"%>
     </div>
-    <div class ="mb-3">
-        <%= form.label :password_confirmation %>
-        <%= form.password_field (:password_confirmation), class: "form-control"%>
-    </div>
 
     <div class="mb-3">
-        <%= form.submit "Registriraj se"%>
+        <%= form.submit "Prijavi se"%>
     </div>
-<%end%>
+<% end %>

@@ -1,1 +1,6 @@
 <h1>Ptice so kul</h1>
+
+<% if @user %>
+    <%= @user.email %>
+    <%= button_to "Odjava", odjava_path, method: :delete %>
+<% end %>

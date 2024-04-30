@@ -1,5 +1,25 @@
 <nav class="nav">
   <a class="nav-link active" aria-current="page" href="/">Domača stran</a>
   <a class="nav-link" href="/galerija">Galerija</a>
-  <a class="nav-link" href="/registracija">Registracija</a>
+  <a class="nav-link" href="/nalozi">Naloži sliko</a>
+
+  <a class ="navbar-nav ms-auto mb-2 mb-lg-0">
+      <% if Current.user %>
+        <li class="nav-item">
+          <%= Current.user.email %>
+        </li>
+        <li class="nav-item">
+          <%= button_to "Odjava", odjava_path, method: :delete, class: "nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Registracija", registracija_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Prijava", prijava_path, class: "nav-link" %>
+        </li>
+      <% end %>
+  </a>
 </nav>
+
+
