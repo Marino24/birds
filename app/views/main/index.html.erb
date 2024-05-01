@@ -1,6 +1,8 @@
-<h1>Ptice so kul</h1>
+<h1>To je domača stran</h1>
 
-<% if @user %>
-    <%= @user.email %>
-    <%= button_to "Odjava", odjava_path, method: :delete %>
+<%= form_tag(change_background_path, method: :post) do %>
+  <%= select_tag :color, options_for_select(["White", "LightGray", "SkyBlue", "LightGreen", "LightPink"])
+ %>
+  <%= submit_tag "Change Background" %>
 <% end %>
+

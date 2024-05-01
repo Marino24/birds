@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "main#index"
 
+  post 'change_background', to: 'main#change_background'
+
   get "galerija", to: "galerija#galerijaIndex"
 
   get "registracija", to: "registracija#new"
@@ -14,6 +16,12 @@ Rails.application.routes.draw do
 
   get "nalozi", to: "galerija#new"
   post "nalozi", to: "galerija#create"
+
+  get "posta", to: "mail#new"
+  post "posta", to: "mail#send"
+
+  resources :notepads
+
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

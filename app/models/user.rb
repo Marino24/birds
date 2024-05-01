@@ -5,6 +5,7 @@
 #password_confirmation:string virtual
 class User < ApplicationRecord
     has_many :pictures
+    has_many :notepads
     has_secure_password
 
     validates :email, presence: true
