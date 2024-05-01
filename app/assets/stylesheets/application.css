@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+ body {
+    padding: 20px; 
+    margin: 0; 
+  }
+
+  .navbar-nav > .nav-item{
+    padding-left:30px;
+    padding-right:30px;
+  }
+
+  div.form
+  {
+      display: block;
+      text-align: center;
+  }
+  form
+  {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+  }
+  
+  .form-control {
+    max-width: 400px; 
+  }
+
+
+  
+  .gallery .col {
+    flex: 0 0 20%; /* 20% širine stolpca, da je prostor za 5 stolpcev v vrstici */
+    max-width: 20%; /* Omeji največjo širino stolpca na 20% */
+    max-height: 300px; /* Omeji največjo višino stolpca na 300px */
+  }
+  
+  .gallery .col img {
+    max-width: 100%; /* Omeji največjo širino slike na 100% širine stolpca */
+    max-height: calc(100% - 4em); /* Omeji največjo višino slike na višino stolpca minus 2em za besedilne elemente */
+    object-fit: cover; /* Prilagodi velikost slike tako, da pokrije celoten prostor, ne da bi izgubili razmerje stranic */
+  }
+  
+  .gallery .col p {
+    max-width: 100%; /* Omeji največjo širino besedilnega elementa na 100% širine stolpca */
+    overflow: hidden; /* Skrij presežek besedila, če je večje od določene višine */
+    text-overflow: ellipsis; /* Dodaj tri pike, če je besedilo preseženo */
+    white-space: nowrap; /* Prepreči prelom besedila */
+  }
+  
+  
+  
+  

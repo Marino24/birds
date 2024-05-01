@@ -1,16 +1,20 @@
 <h1> Objavi  </h1>
 
-<%=form_with model: @slika, url: nalozi_path do |form|%>
-    <div class ="mb-3">
-        <%= form.label :name %>
-        <%= form.text_field (:name), class: "form-control" %>
+<div class="form">
+
+  <%= form_with model: @slika, url: nalozi_path do |form| %>
+    <div class="mb-3">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control" %>
     </div>
-    <div class ="mb-3">
-        <%= form.label :image %>
-        <%= form.file_field :image, class: "form-control"%>
+    <div class="mb-3">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: "form-control" %>
     </div>
 
     <div class="mb-3">
-        <%= form.submit "Objavi"%>
+      <%= form.submit "Objavi", class: "btn btn-primary" %>
     </div>
-<% end %>
+  <% end %>
+</div>
+

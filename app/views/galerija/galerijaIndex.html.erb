@@ -1,11 +1,13 @@
-<h1>Galerija slik</h1>
-
-<% @slike.each do |slika| %>
-  <div>
-    <%= image_tag slika.image , width: "300", height: "200" %>
-    <p>Naziv: <%= slika.name %></p> 
-    <p>Naložil: <%= slika.user.email %></p> 
-    <br>
-  </div>
-<% end %>
-
+<div class="gallery">
+  <% @slike.each_slice(5) do |slike_v_vrstici| %>
+    <div class="row">
+      <% slike_v_vrstici.each do |slika| %>
+        <div class="col">
+          <%= image_tag slika.image, class: "image" %>
+          <p>Naziv: <%= slika.name %></p> 
+          <p>Naložil: <%= slika.user.email %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
