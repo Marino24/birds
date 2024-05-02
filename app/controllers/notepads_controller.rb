@@ -12,7 +12,7 @@ class NotepadsController < ApplicationController
   def create
     @notepad = Current.user.notepads.build(notepad_params)
     if @notepad.save
-      redirect_to belezka_path, notice: "Beležka ustvarjena."
+      redirect_to notepads_path, notice: "Beležka ustvarjena."
     else
       @notepads = current_user.notepads
       render :index

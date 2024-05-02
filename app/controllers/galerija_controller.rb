@@ -3,9 +3,8 @@ class GalerijaController < ApplicationController
         @slike = Picture.all
     end
 
-
     def new
-        if Current.user 
+        if Current.user
             @slika = Picture.new
         else
             redirect_to prijava_path, notice: "Potrebna je prijava."
@@ -13,7 +12,7 @@ class GalerijaController < ApplicationController
     end
 
     def create
-        @slika = Current.user.pictures.build(picture_params) 
+        @slika = Current.user.pictures.new(picture_params)
         if @slika.save
             redirect_to root_path, notice: "Slika je bila uspešno naložena."
         else
@@ -24,6 +23,6 @@ class GalerijaController < ApplicationController
     private
 
   def picture_params
-    params.require(:picture).permit(:name, :image) 
+    params.require(:picture).permit(:name, :image)
   end
 end
